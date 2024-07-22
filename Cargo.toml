@@ -8,5 +8,10 @@ edition = "2021"
 [dependencies]
 serial-frame = { git = "https://github.com/rel4team/serial-frame.git", branch = "mi_dev" }
 serial-impl-pl011 = { git = "https://github.com/rel4team/serial-impl-pl011.git", branch = "mi_dev" }
-serial-impl-sbi = { git = "https://github.com/rel4team/serial-impl-sbi.git", branch = "mi_dev" }
 cfg-if = "1.0.0"
+
+[target.'cfg(target_arch = "riscv64")'.dependencies]
+serial-impl-sbi = { git = "https://github.com/rel4team/serial-impl-sbi.git", branch = "mi_dev" }
+
+[features]
+unit-test = []
